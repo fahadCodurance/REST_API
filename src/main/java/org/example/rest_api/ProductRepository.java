@@ -1,14 +1,25 @@
 package org.example.rest_api;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Component("productRepository")
 public class ProductRepository {
+
+    private List<Product> products = new ArrayList<>();
+
     public List<Product> getProducts() {
-        Product product = new Product("Iceberg", 2.17);
-        return List.of(product);
+        return products;
+    }
+
+
+    public void addProduct(Product product) {
+        products.add(product);
+    }
+
+    public ProductRepository() {
+        products.add(new Product("Iceberg", 2.17));
     }
 }

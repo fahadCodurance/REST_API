@@ -1,8 +1,9 @@
 package org.example.rest_api;
 
+import lombok.Data;
 import lombok.Getter;
 
-@Getter
+@Data
 public class Product {
     private final String name;
     private final double price;

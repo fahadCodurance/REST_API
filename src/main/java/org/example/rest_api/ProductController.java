@@ -1,10 +1,7 @@
 package org.example.rest_api;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -12,7 +9,7 @@ import java.util.List;
 @RequestMapping("products")
 public class ProductController {
 
-    private ProductRepository productRepository;
+    private final ProductRepository productRepository;
 
     @Autowired
     public ProductController(ProductRepository productRepository) {
@@ -22,7 +19,12 @@ public class ProductController {
 
     @GetMapping
     @ResponseBody
-        public List<Product> getProducts(){
-           return productRepository.getProducts();
-        }
+    public List<Product> getProducts() {
+        return productRepository.getProducts();
+    }
+
+    @PostMapping
+    public void addProduct(@RequestBody Product product) {
+        productRepository.addProduct(product);
+    }
 }

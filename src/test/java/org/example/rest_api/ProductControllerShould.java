@@ -22,4 +22,15 @@ class ProductControllerShould {
         verify(productRepository).getProducts();
         assertEquals(expectedProductList, actualProductList);
     }
+
+    @Test
+    void add_product_to_list() {
+        ProductRepository productRepository = mock(ProductRepository.class);
+        Product product  = new Product("Bread", 2.17);
+
+        ProductController productController = new ProductController(productRepository);
+        productController.addProduct(product);
+
+        verify(productRepository).addProduct(product);
+    }
 }
