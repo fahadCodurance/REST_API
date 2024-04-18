@@ -1,4 +1,4 @@
-package org.example.rest_api;
+package org.example.rest_api.models.product;
 
 import org.springframework.stereotype.Component;
 

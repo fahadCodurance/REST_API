@@ -1,5 +1,8 @@
-package org.example.rest_api;
+package org.example.rest_api.controllers;
 
+import org.example.rest_api.ProductAlreadyExistsException;
+import org.example.rest_api.models.product.ProductRepository;
+import org.example.rest_api.models.product.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -34,4 +37,5 @@ public class ProductController {
         productRepository.addProduct(product);
         return new ResponseEntity<>("Product added", new HttpHeaders(), HttpStatus.CREATED);
     }
+
 }

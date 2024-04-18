@@ -1,8 +1,10 @@
-package org.example.rest_api;
+package org.example.rest_api.controller;
 
+import org.example.rest_api.controllers.ProductController;
+import org.example.rest_api.models.product.Product;
+import org.example.rest_api.models.product.ProductRepository;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -33,4 +35,6 @@ class ProductControllerShould {
 
         verify(productRepository).addProduct(product);
     }
+
+
 }
