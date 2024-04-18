@@ -1,5 +1,6 @@
 package org.example.rest_api;
 
+import org.example.rest_api.controllers.ShoppingCartController;
 import org.json.JSONObject;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

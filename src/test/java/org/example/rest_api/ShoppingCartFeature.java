@@ -1,5 +1,8 @@
 package org.example.rest_api;
 
+import org.example.rest_api.controllers.ShoppingCartController;
+import org.example.rest_api.models.shoppingcart.ShoppingCartRepository;
+import org.example.rest_api.models.shoppingcart.ShoppingCartService;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.junit.jupiter.api.Test;
@@ -19,7 +22,8 @@ public class ShoppingCartFeature {
         expectedShoppingCart.put("discount", null);
         expectedShoppingCart.put("total", "0 €");
         ShoppingCartRepository shoppingCartRepository = mock(ShoppingCartRepository.class);
-        ShoppingCartController shoppingCartController = new ShoppingCartController();
+        ShoppingCartService shoppingCartService = new ShoppingCartService();
+        ShoppingCartController shoppingCartController = new ShoppingCartController(shoppingCartService);
 
         shoppingCartController.getShoppingCart();
 
