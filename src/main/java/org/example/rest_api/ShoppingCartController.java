@@ -10,6 +10,6 @@ public class ShoppingCartController {
 
     @GetMapping
     public String getShoppingCart() {
-        throw new UnsupportedOperationException();
+
     }
 }
