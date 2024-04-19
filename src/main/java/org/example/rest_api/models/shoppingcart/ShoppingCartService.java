@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 @Component("shoppingCartService")
 public class ShoppingCartService {
-    public void getShoppingCart() {
+    public ShoppingCart getShoppingCart() {
         throw new UnsupportedOperationException();
     }
 }
