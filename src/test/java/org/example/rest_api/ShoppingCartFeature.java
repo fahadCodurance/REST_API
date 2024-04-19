@@ -9,7 +9,6 @@ import org.json.JSONObject;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
-import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.mock;
@@ -27,7 +26,7 @@ public class ShoppingCartFeature {
         expectedShoppingCart.put("discount", NO_DISCOUNT);
         expectedShoppingCart.put("total", ZERO_EUROS);
         ShoppingCartRepository shoppingCartRepository = mock(ShoppingCartRepository.class);
-        ShoppingCartService shoppingCartService = new ShoppingCartService();
+        ShoppingCartService shoppingCartService = new ShoppingCartService(shoppingCartRepository);
         ShoppingCartController shoppingCartController = new ShoppingCartController(shoppingCartService);
 
         shoppingCartController.getShoppingCart();
